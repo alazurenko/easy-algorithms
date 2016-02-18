@@ -7,6 +7,9 @@ array should be sorted out before you want to implement binarySearch
 @end end index
 
 returns index of @target element withing @values array
+
+Binary Search can be applied only on collection that allows randonm accessing
+(indexing)
 */
 function binarySearch(values, target, start, end) {
   if(start > end) {
