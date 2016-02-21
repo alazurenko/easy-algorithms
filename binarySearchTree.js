@@ -109,6 +109,28 @@ BST.prototype.find = function(data) {
   return current;
 }
 
+BST.prototype.remove = function(data) {
+  var current = this.root;
+  var parent;
+
+  while(true) {
+    parent = current;
+    if(data < current.data) {
+      current = current.left;
+      if(current.data == data) {
+        parent.left = null;
+        break;
+      }
+    } else {
+      current = current.right;
+      if(current.data == data) {
+        parent.right = null;
+        break;
+      }
+    }
+  }
+}
+
 // BST.prototype.getSmallest = function(node) {
 //    return node.left;
 // }
