@@ -18,3 +18,21 @@ LinkedList.prototype.add = function(value) {
   }
   this.tail = node;
 }
+
+LinkedList.prototype.removeAt = function(index) {
+  var prev = null;
+  var node = this.head;
+  var i = 0;
+
+  while(node != null && i++ < index) {
+    prev = node;
+    node = node.next;
+  }
+
+  if(prev == null) {
+    this.head = node.next;
+  }
+  else {
+    prev.next = node.next;
+  }
+}
