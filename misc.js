@@ -17,6 +17,10 @@ function greatestCommonDivisor(a, b) {
   }
 }
 
+function lessCommonMultiplier(a, b) {
+  return (a * b) / greatestCommonDivisor(a, b);
+}
+
 function removeDuplicates(arr) {
   var result = [],
       cache = {};

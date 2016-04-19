@@ -31,8 +31,7 @@ LinkedList.prototype.removeAt = function(index) {
 
   if(prev == null) {
     this.head = node.next;
-  }
-  else {
+  } else {
     prev.next = node.next;
   }
 }
