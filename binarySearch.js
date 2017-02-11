@@ -1,16 +1,18 @@
-/*
-array should be sorted out before you want to implement binarySearch
+'use strict'
 
-@values array
-@target value of searching element
-@start start index
-@end end index
-
-returns index of @target element withing @values array
-
-Binary Search can be applied only on collection that allows randonm accessing
-(indexing)
-*/
+/**
+ * Array should be sorted out before you want to implement binarySearch
+ * Binary Search can be applied only on collection that allows random accessing (indexing)
+ * 
+ * https://en.wikipedia.org/wiki/Binary_search_algorithm
+ * 
+ * @param values Number[] - Array of value to search
+ * @param target Number - Value of searching element
+ * @param start Number - Start index
+ * @param end Number - End index
+ * @returns Number - Index of target element withing values array
+ * 
+ */
 function binarySearch(values, target, start, end) {
   if(start > end) {
     return -1;
@@ -29,5 +31,3 @@ function binarySearch(values, target, start, end) {
 
   return middle;
 }
-
-module.exports = binarySearch;

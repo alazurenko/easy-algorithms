@@ -1,17 +1,12 @@
-function isPrime(n) {
-  var divisor = 2;
+'use strict'
 
-  while(n > divisor) {
-    if(n % divisor === 0) {
-      return false;
-    } else {
-      divisor++;
-    }
-  }
-
-  return true;
-}
-
+/**
+ * Counts amount of prime numbers in a given range
+ * 
+ * @param start Number - Start range 
+ * @param end Number - End range
+ * @returns Numer - Amount of Prime numbers
+ */
 function countAmountOfPrimes(start, end) {
   var counter = 0,
       acc = start;
@@ -26,17 +21,22 @@ function countAmountOfPrimes(start, end) {
   return counter;
 }
 
-function primeFactors(n) {
-  var factors = [],
-      divisor = 2;
+/**
+ * Defines whether number is prime or not
+ * 
+ * @param n Number
+ * @returns Boolean 
+ */
+function isPrime(n) {
+  var divisor = 2;
 
-  while(n > 2) {
-      if(n % divisor === 0) {
-        factors.push(divisor);
-        n = n / divisor;
-      } else {
-        divisor++;
-      }
+  while(n > divisor) {
+    if(n % divisor === 0) {
+      return false;
+    } else {
+      divisor++;
+    }
   }
-  return factors;
+
+  return true;
 }

@@ -1,9 +1,16 @@
-var copyArray = require('./utils/copyArray');
+'use strict'
 
-
+/**
+ * Buble sort, complexity O(n^2)
+ * 
+ * https://en.wikipedia.org/wiki/Bubble_sort
+ * 
+ * @param values Number[] - Array of numbers to search
+ * @returns Number[] 
+ */
 function bubleSort(values) {
-  'use strict';
-  var array = copyArray(values),
+  
+  var array = values.slice(),
       length = array.length - 1;
 
   do {
@@ -21,6 +28,3 @@ function bubleSort(values) {
 
   return array;
 };
-
-
-//O(n^2) 

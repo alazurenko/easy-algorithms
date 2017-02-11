@@ -1,3 +1,12 @@
+'use strict'
+
+/**
+ * Quick Sort 
+ * https://en.wikipedia.org/wiki/Quicksort
+ * 
+ * @param arr Number[]
+ * @returns Number[]
+ */
 function quickSort(arr) {
   if(arr.length == 0) {
     return [];

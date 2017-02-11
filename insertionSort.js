@@ -1,3 +1,13 @@
+'use strict'
+
+/** 
+ * Insertion sort 1
+ * 
+ * https://en.wikipedia.org/wiki/Insertion_sort
+ * 
+ * @param arr Number[]
+ * @returns Number[] 
+ */
 function insertionSort(arr) {
   var length = arr.length;
 
@@ -13,6 +23,11 @@ function insertionSort(arr) {
   return arr;
 }
 
+/**
+ * Insertion sort 2
+ * @param arr Number[]
+ * @returns Number[] 
+ */
 function insertion(arr) {
   var length = arr.length;
 
@@ -25,6 +40,12 @@ function insertion(arr) {
   return arr;
 }
 
+/**
+ * Swaps items in array
+ * @param arr Number[] 
+ * @param a Number Value 1 to swap 
+ * @param b Number Value 2 to swap
+ */
 function swap(arr, a, b) {
   var temp = arr[a];
   arr[a] = arr[b];

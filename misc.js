@@ -1,5 +1,11 @@
-//some miscellaneous solution
+'use strict'
 
+/**
+ * Counts summ of fibbonachi numbers
+ * 
+ * @param n Number - Number
+ * @returns Number - Summ of numbers
+ */
 function fibbo(n) {
   if(n <= 1) {
     return n;
@@ -8,7 +14,13 @@ function fibbo(n) {
   }
 }
 
-//fancy way to find GCD
+/**
+ * Finds a greates common divisor for given numbers
+ * 
+ * @param a Number
+ * @param b Number
+ * @return Number
+ */
 function greatestCommonDivisor(a, b) {
   if(b == 0) {
     return a;
@@ -17,10 +29,23 @@ function greatestCommonDivisor(a, b) {
   }
 }
 
+/**
+ * Finds a less common multiplier for given numbers
+ * 
+ * @param a Number
+ * @param b Number
+ * @return Number
+ */
 function lessCommonMultiplier(a, b) {
   return (a * b) / greatestCommonDivisor(a, b);
 }
 
+/**
+ * Removes duplicates from arr
+ * 
+ * @param arr Numbers[] 
+ * @returns Number[]
+ */
 function removeDuplicates(arr) {
   var result = [],
       cache = {};
@@ -35,20 +60,13 @@ function removeDuplicates(arr) {
   return result;
 }
 
-//how to find missing number from an unsorted array of numbers 1 too 100
-function missingNumber(arr){
-  var n = arr.length+1,
-  sum = 0,
-  expectedSum = n * (n+1)/2;
-
-  for(var i = 0; i < arr.length; i++){
-    sum += arr[i];
-  }
-
-  return expectedSum - sum;
-}
-
-//count all zeros in numbers in a descending order (20) => 2; (100) => 11
+/** 
+ * Counts amount of zeros in a descending order for a given numbers
+ * (20) => 2; (100) => 11
+ * 
+ * @param n Number
+ * @returns Number 
+ */
 function countZeros(n) {
   var counter = 0;
   while(n>0) {
@@ -57,39 +75,3 @@ function countZeros(n) {
   }
   return counter;
 }
-
-//some methods extentions for built-in objects
-//this is a bad practice and done for fun :)
-String.prototype.repeatify = function (n) {
-  return Array.prototype.join.call({length: n+1}, this);
-};
-
-
-String.prototype.capitalize = function() {
-  return this.charAt(0).toUpperCase() + this.substr(1);
-};
-
-Array.prototype.sum = function() {
-  return this.reduce(function(sum, item) {
-    return sum + item
-  }, 0)
-}
-
-Array.prototype.getMax = function() {
-  return Math.max.apply(null, this);
-}
-
-Array.prototype.isArray(value) {
-  return value && (typeof value === 'object' && value.constructor === Array)
-};
-
-Array.prototype.isArray = function (value) {
-  return Object.prototype.toString.apply(value) === '[object Array]';
-};
-
-Array.prototype.reduce = function(f, acc) {
-  for(var i = 0; i < this.length; i++) {
-    acc = f(acc, this[i], i, this)
-  }
-  return acc;
-};
